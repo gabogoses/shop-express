@@ -42,13 +42,13 @@ main {
 
 .main-header__item a {
   text-decoration: none;
-  color: white;
+  color: #817fe9;
 }
 
 .main-header__item a:hover,
 .main-header__item a:active,
 .main-header__item a.active {
-  color: #51b6c1;
+  color: #19d9ee;
 }
 
 .grid {
@@ -103,6 +103,6 @@ main {
 
 .btn:hover,
 .btn:active {
-  background-color: #5250d8;
+  background-color: #221ed8;
   color: white;
 }
