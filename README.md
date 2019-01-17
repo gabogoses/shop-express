@@ -1,3 +1,3 @@
 # Shop Express
 
-🛍️ Shopping Website made my Node.js
+🛍️ Shopping Website made with Node.js
