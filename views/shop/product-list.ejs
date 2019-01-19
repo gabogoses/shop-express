@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row">
         <% for (let product of prods) { %>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <div class="card" style="width: 18rem;">
             <img
               class="card-img-top"
@@ -20,12 +20,15 @@
               <a href="#" class="btn btn-primary">Add to Cart</a>
             </div>
           </div>
+          <br /><br /><br />
         </div>
         <% } %> <% } else { %>
         <h1>No Products Found!</h1>
         <% } %>
       </div>
     </div>
+    <br />
   </main>
 </body>
+
 <%- include('../includes/end.ejs') %>
