@@ -17,7 +17,12 @@
             <div class="card-body">
               <h5 class="card-title"><%= product.title %></h5>
               <p class="card-text"><%= product.description %></p>
-              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <div class="form-group">
+                <a href="/products/<%= product.id %>" class="btn btn-primary"
+                  >Details</a
+                >
+                <%- include('../includes/add-to-cart', {product: product}) %>
+              </div>
             </div>
           </div>
           <br /><br /><br />
