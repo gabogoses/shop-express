@@ -19,8 +19,8 @@
                             <p class="card-text">
                                 <%= product.description %>
                             </p>
-                            <form action="/admin/delete-product" method="POST">
-                                <a class="btn btn-primary" href="/admin/edit-product" role="button">Edit</a>
+                            <a class="btn btn-primary" href="/admin/edit-product/<%= product.id %>?edit=true" role="button">Edit</a>
+                            <form action="/admin/edit-product" method="POST">
                                 <button type="button" class="btn btn-danger">Delete</button>
                             </form>
                         </div>
