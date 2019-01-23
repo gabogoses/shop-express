@@ -6,7 +6,7 @@
 <body>
     <%- include('../includes/navigation.ejs') %>
     <main>
-        <form action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST"></form>
+        <form action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
         <div class="container">
             <form class="text-center" action="/admin/add-product" method="POST"">
                 <p class=" h4 mb-4">Add
@@ -17,9 +17,16 @@
                 <textarea class="form-control rounded-0" name="description" id="description" rows="3" placeholder="Description"><% if (editing) { %>
                 <%= product.description %>
                 <% } %></textarea>
-                <button type="submit" class="btn btn-primary"><% if (editing) { %>Update Product
+                <!-- <button type="submit" class="btn btn-primary"><% if (editing) { %>Update Product
                 <% } else { %>Add Product
-                <% } %></button>
+                <% } %></button> -->
+                <% if (editing) { %>
+                <input type="hidden" value="<%= product.id %>" name="productId">
+                <% } %>
+                <button class="btn btn-primary" type="submit">
+                    <% if (editing) { %>Update Product
+                    <% } else { %>Add Product
+                    <% } %></button>
             </form>
         </div>
     </main>
