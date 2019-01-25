@@ -7,7 +7,7 @@ class User {
   constructor(username, email, cart, id) {
     this.name = username;
     this.email = email;
-    this.cart = cart;
+    this.cart = cart; // {items: []}
     this._id = id;
   }
 
@@ -65,7 +65,7 @@ class User {
       });
   }
 
-  deteleItemFromCart(productId) {
+  deleteItemFromCart(productId) {
     const updatedCartItems = this.cart.items.filter(item => {
       return item.productId.toString() !== productId.toString();
     });
@@ -104,12 +104,24 @@ class User {
 
   getOrders() {
     const db = getDb();
-    // return db.collection
+    return db
+      .collection("orders")
+      .find({ "user._id": new ObjectId(this._id) })
+      .toArray();
   }
 
   static findById(userId) {
     const db = getDb();
-    return db.collection("users").findOne({ _id: new ObjectId(userId) });
+    return db
+      .collection("users")
+      .findOne({ _id: new ObjectId(userId) })
+      .then(user => {
+        console.log(user);
+        return user;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 }
 
