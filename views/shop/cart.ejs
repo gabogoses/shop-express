@@ -8,7 +8,7 @@
         <% if (products.length > 0) { %>
         <div class="container">
             <div class="row">
-                
+
                 <div class="col-sm-4">
                     <% products.forEach(p => { %>
                     <div class="card" style="width: 18rem;">
@@ -27,19 +27,16 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <br />
+                    <% }) %>
+                    <form action="/create-order" method="POST" class="">
+                        <button type="submit" class="btn btn-primary">Order Now!</button>
+                    </form>
                 </div>
-                
             </div>
-            <br />
-           
-            <% }) %>
-            <form action="/create-order" method="POST" class="myForm2">
-                <button type="submit" class="btn btn-primary">Order Now!</button>
-            </form>
             <% } else { %>
             <h1>No Products in Cart!</h1>
             <% } %>
-            <main>
-                <%- include('../includes/end.ejs') %>
         </div>
+    <main>
+    <%- include('../includes/end.ejs') %>
