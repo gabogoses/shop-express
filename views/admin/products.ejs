@@ -22,10 +22,9 @@
                             <p >$<%= product.price %></p>
                             <form action="/admin/delete-product" method="POST" class="myForm">
                                 <input type="hidden" value="<%= product._id %>" name="productId">
-                                
+                                <a href="/admin/edit-product/<%= product._id %>?edit=true" class="btn btn-primary">Edit</a>
                                 <button class="btn btn-danger" type="submit">Delete</button>
                             </form>
-                            <a href="/admin/edit-product/<%= product._id %>?edit=true" class="btn btn-primary">Edit</a>
                         </div>
                     </div>
                     <br />
