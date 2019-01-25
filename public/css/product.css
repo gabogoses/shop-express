@@ -23,3 +23,9 @@
 .product__description {
   text-align: center;
 }
+
+.myForm {
+  display: table-cell;
+  padding-left: 5px;
+  padding-right: 5px;
+}
