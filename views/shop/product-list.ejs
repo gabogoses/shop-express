@@ -18,11 +18,14 @@
               <h5 class="card-title"><%= product.title %></h5>
               <p class="card-text"><%= product.description %></p>
               <p>$ <%= product.price %></p>
+
               <div class="form-group">
+                <% if (isAuthenticated) { %>
                 <form action="/cart" method="post" role="form">
                   <button type="submit" value="/cart" class="btn btn-primary">
                     Add to Cart
                   </button>
+                  <% } %>
                   <a href="/products/<%= product._id %>" class="btn btn-primary"
                     >Details</a
                   >
@@ -32,6 +35,7 @@
                     value="<%= product._id %>"
                   />
                 </form>
+
                 <!-- <%- include('../includes/add-to-cart', {product: product}) %> -->
               </div>
             </div>
