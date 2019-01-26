@@ -16,9 +16,9 @@
                        <h5 class="card-header">Order - #
                         <%= order._id %></h5>
                         <ul class="orders__products">
-                            <% order.items.forEach(product => { %>
+                            <% order.products.forEach(p => { %>
                             <p class="card-text">
-                                (<%= product.quantity %>) <%= product.title %></p>
+                                (<%= p.quantity %>) <%= p.product.title %></p>
                                 <% }); %>
                             </div>
                         <br />
