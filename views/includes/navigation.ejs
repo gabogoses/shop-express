@@ -1,3 +1,4 @@
+<%- include('../includes/head.ejs') %>
 <div>
   <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
     <div class="container">
@@ -31,13 +32,14 @@
           <% } %>
         </ul>
         <% if (!isAuthenticated) { %>
-          <a class="btn btn-light <%= path === '/login' ? 'active' : '' %>" href="/login" class="login">Log In</a>
+          <a class="btn btn-light <%= path === '/login' ? 'active' : '' %>" href="/login" >Log In</a>
+          <a class="btn btn-light <%= path === '/signup' ? 'active' : '' %>" href="/signup" >Sign Up</a>
           <% } else { %>
           <form action="/logout" method="POST">
             <input class="btn btn-light" type="submit" value="Log Out">
           </form>
-          <!-- <a class="btn btn-light action-button" href="#" class="signup">Sign Up</a> -->
         <% } %>
+        </div>
       </div>
     </div>
   </nav>
