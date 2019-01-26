@@ -13,9 +13,6 @@
       <div class="collapse navbar-collapse" id="navcol-1">
         <ul class="nav navbar-nav mr-auto">
           <li class="nav-item" role="presentation">
-            <a class="nav-link <%= path === '/' ? 'active' : '' %>" href="/">Shop</a>
-          </li>
-          <li class="nav-item" role="presentation">
             <a class="nav-link <%= path === '/products' ? 'active' : '' %>" href="/products">Products</a>
           </li>
           <li class="nav-item" role="presentation">
@@ -24,16 +21,18 @@
           <li class="nav-item" role="presentation">
             <a class="nav-link <%= path === '/orders' ? 'active' : '' %>" href="/orders"">Orders</a>
           </li>
+          <% if (isAuthenticated) { %>
           <li class="nav-item" role="presentation">
             <a class="nav-link <%= path === '/admin/add-product' ? 'active' : '' %>" href="/admin/add-product">Add Product</a>
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link <%= path === '/admin/products' ? 'active' : '' %>" href="/admin/products">Admin Products</a>
           </li>
+          <% } %>
         </ul>
         <span class="navbar-text actions">
-          <a href="#" class="login">Log In</a>
-          <a class="btn btn-light action-button" href="#" class="signup">Sign Up</a>
+          <a class="nav-link <%= path === '/login' ? 'active' : '' %>" href="/login" class="login">Log In</a>
+          <!-- <a class="btn btn-light action-button" href="#" class="signup">Sign Up</a> -->
         </span>
       </div>
     </div>
