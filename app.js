@@ -4,7 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const session = require("express-session");
-const mongoDBStore = require("connect-mongodb-session")(session);
+const MongoDBStore = require("connect-mongodb-session")(session);
 
 const errorController = require("./controllers/error");
 const User = require("./models/user");
@@ -13,7 +13,7 @@ const MONGODB_URI =
   "mongodb+srv://gabogoses:zsEkolgrXPucyMp1@gabocluster-5qbtl.mongodb.net/shop";
 
 const app = express();
-const store = new mongoDBStore({
+const store = new MongoDBStore({
   uri: MONGODB_URI,
   collection: "sessions"
 });
@@ -29,21 +29,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
   session({
-    secret: "gabo secret",
+    secret: "my secret",
     resave: false,
     saveUninitialized: false,
     store: store
   })
 );
-
-app.use((req, res, next) => {
-  User.findById("5c4ba7b03b9ce6f3b67adb4d")
-    .then(user => {
-      req.user = user;
-      next();
-    })
-    .catch(err => console.log(err));
-});
 
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
@@ -57,8 +48,8 @@ mongoose
     User.findOne().then(user => {
       if (!user) {
         const user = new User({
-          name: "Gabo",
-          email: "gabriel@me.com",
+          name: "Max",
+          email: "max@test.com",
           cart: {
             items: []
           }
