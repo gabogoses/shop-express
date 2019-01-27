@@ -1,6 +1,10 @@
 <%- include('../includes/head.ejs') %> <%- include('../includes/navigation.ejs')
 %>
 <div class="container">
+  <% if (errorMessage) { %>
+  <div class="user-message user-message--error"><%= errorMessage %></div>
+  <div><br /></div>
+  <% } %>
   <form action="/signup" method="POST">
     <div class="row justify-content-center align-items-center">
       <div class="col-4">
