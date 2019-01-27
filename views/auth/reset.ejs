@@ -1,21 +1,28 @@
 
 
 <%- include('../includes/head.ejs') %>
-<%- include('../includes/navigation.ejs')%>
+<!-- <%- include('../includes/navigation.ejs')%> -->
 <div class="container">
+   <br />
+  <div class="text-center">
+    <a style="font-size: 80px; text-decoration:none;" href="/"> 🛍️</a>
+    <h2>Reset your password</h2>
+  </div>
+  <br />
     <form action="/reset" method="POST" autocomplete="off">
         <% if (errorMessage) { %>
-        <div class="user-message user-message--error">
-            <%= errorMessage %>
+        <div class="alert alert-danger text-center" style="width: 50%; margin: auto;">
+            <strong>
+                <%= errorMessage %></strong>
         </div>
         <div><br /></div>
         <% } %>
         <div class="row justify-content-center align-items-center">
-            <div class="col-4">
-                <div class="card">
+                <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <div class="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="email" />
+                            <label>Enter your email address and we will send you a link to reset your password.</label>
+                            <input type="email" class="form-control" name="email" placeholder="enter your email address" />
                         </div>
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                         <button type="submit" id="sendlogin" class="btn btn-primary">
