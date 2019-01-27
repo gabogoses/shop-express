@@ -36,10 +36,12 @@
           <a class="btn btn-light action-button <%= path === '/signup' ? 'active' : '' %>" href="/signup" >Sign Up</a>
           <% } else { %>
             </span>
+            <span class="navbar-text actions">
           <form action="/logout" method="POST">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <input class="btn btn-light" type="submit" value="Log Out">
+            <input class="btn btn-light action-button" type="submit" value="Log Out">
           </form>
+          </span>
         <% } %>
         </div>
       </div>

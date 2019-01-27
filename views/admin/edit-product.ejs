@@ -9,7 +9,7 @@
         <form action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
         <div class="container">
             <form class="text-center" action="/admin/add-product" method="POST"">
-                <p class=" h4 mb-4">Add
+                <p class=" h4 mb-4 text-center">Add
                 Product</p>
                 <input type="text" class="form-control" name="title" id="title" placeholder="Enter name of product" value="<% if (editing) { %><%= product.title %><% } %>">
                 <input type="text" class="form-control" name="imageUrl" id="imageUrl" placeholder="Image URL" value="<% if (editing) { %><%= product.imageUrl %><% } %>">

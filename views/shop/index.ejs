@@ -8,7 +8,7 @@
       <div class="row">
         <% for (let product of prods) { %>
         <div class="col-sm-4">
-          <div class="card" style="width: 18rem;">
+          <div class="card h-90" style="width: 18rem;">
             <img
               class="card-img-top"
               src="<%= product.imageUrl %>"
@@ -42,7 +42,7 @@
           <br /><br /><br />
         </div>
         <% } %> <% } else { %>
-        <h1>No Products Found!</h1>
+        <h1 class="text-center">No Products Found!</h1>
         <% } %>
       </div>
     </div>
