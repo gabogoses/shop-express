@@ -9,3 +9,7 @@
   float: right;
   margin-top: 9px;
 }
+
+.form-group input.invalid {
+  border-color: red;
+}

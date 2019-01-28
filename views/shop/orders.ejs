@@ -13,7 +13,7 @@
                     <% orders.forEach(order => { %>
                     <div class="card">
                         <h5 class="card-header">Order - #
-                            <%= order._id %>
+                            <%= order.user.email %>
                         </h5>
                         <ul class="orders__products">
                             <% order.products.forEach(p => { %>
