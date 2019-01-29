@@ -13,3 +13,7 @@
 .form-group input.invalid {
   border-color: red;
 }
+
+.invalid {
+  border-color: red;
+}

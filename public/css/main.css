@@ -25,3 +25,7 @@
 :invalid {
   border-color: red;
 }
+
+.emoji {
+  font-size: 100px;
+}
